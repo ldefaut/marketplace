@@ -1,5 +1,6 @@
 import {Link} from 'react-router-dom';
 import React, {Component} from 'react';
+import {withAutorization} from './Autorization';
 
 class Navigation extends Component{
     render(){
@@ -15,10 +16,15 @@ class Navigation extends Component{
                     <li>
                         <Link to="/Signup">Créer un Compte</Link>
                     </li>
+                    <li>
+                        <h1>
+                        {this.props.isLogged ? "connecté":"déconnecté"}
+                        </h1>
+                    </li>
                 </ul>
             </div>
         );
     }
 }
 
-export default Navigation;
+export default withAutorization(Navigation);
