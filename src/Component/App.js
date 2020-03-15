@@ -16,21 +16,24 @@ import Signup from "./Signup";
 
 class Titre extends Component{
     render(){
-        console.log(this.props); // this.props.isLogged
         return <h1>{this.props.isLogged ? "Connecté" : "Se Connecter"}</h1>;
     }
 }
 
 const Titre2 = withAutorization(Titre);
 
-class Bouton extends Component{
+export class Bouton extends Component{
     render(){
-        console.log(this.props);
-        return <button onClick={this.props.toLogin}>Se connecter</button>;
+        console.log("bouton props",this.props);
+        return <button onClick={this.props.toLogin}>
+                Se Connecter
+            </button>;
     }
 }
 
-const Bouton2 = withAutorization(Bouton);
+
+
+export const Bouton2 = withAutorization(Bouton);
 
 class App extends Component{
     render(){
@@ -49,10 +52,8 @@ class App extends Component{
                             <Signup/>
                         </Route>
                     </Switch>
+                    <Titre/>
                 </Router>
-                <Titre/>
-                <Titre2/>
-                <Bouton/>
             </AutorizationProvider>
         )
     }

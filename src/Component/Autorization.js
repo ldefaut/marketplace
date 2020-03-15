@@ -3,9 +3,11 @@ import React, {Component} from 'react';
 export const AutorizationContext = React.createContext(null);
 export class AutorizationProvider extends Component{
     state = {
-        isLogged : true,
-        toLogin : ()=> this.setState({isLogged : true}),
+        isLogged : false,
+        toLogin : ()=> this.setState({isLogged : ! this.state.isLogged}),
     }
+    
+    
     render (){
         return(
             <AutorizationContext.Provider value={this.state}>
@@ -14,6 +16,8 @@ export class AutorizationProvider extends Component{
             )
     }
 }
+
+
 
 export const withAutorization = (Component) =>{
     class NewComponent extends Component{
