@@ -52,7 +52,6 @@ class App extends Component{
                             <Signup/>
                         </Route>
                     </Switch>
-                    <Titre/>
                 </Router>
             </AutorizationProvider>
         )

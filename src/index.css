@@ -63,6 +63,30 @@ body, html {
 .logo img{
   width: 100%;
 }
+
+.acc h1{
+  text-align:center;
+}
+
+.items{
+  margin: 20px;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.items .item{
+  padding: 25px;
+  width: 33%;
+  flex : 0 0 33.333333%;
+}
+
+.items .image{
+  overflow: hidden;
+}
+
+.items .item img{
+  width: 100%;
+}
 /*---------------------------------------------*/
 input {
 	outline: none;
@@ -94,13 +118,13 @@ label {
 }
 
 /*---------------------------------------------*/
-button {
+login100-form-bt {
 	outline: none !important;
 	border: none;
 	background: transparent;
 }
 
-button:hover {
+login100-form-bt:hover {
 	cursor: pointer;
 }
 

@@ -1,5 +1,6 @@
 import {Link} from 'react-router-dom';
 import React, {Component} from 'react';
+import {count} from './Home'
 import {withAutorization} from './Autorization';
 import logo from "./logo_market_place.png";
 
@@ -12,6 +13,9 @@ class Navigation extends Component{
                         <Link to="/"><img src={logo}/></Link>
                     </li>
                     <li class="f-right">
+                        Vous avez {count} articles.
+                    </li>
+                    <li class="f-right">
                         {this.props.isLogged ? "connecté ":<ul><li>
                         <Link to="/Signin">Se Connecter</Link>
                     </li>
@@ -19,7 +23,10 @@ class Navigation extends Component{
                     
                     </li>
                     <li class="f-right">
-                        <Link to="/Signup" onClick={this.props.toLogin}>{this.props.isLogged ? "": "Créer un Compte"}</Link>
+                        {this.props.isLogged ? "":<ul><li>
+                        <Link to="/Signup">Créer un compte</Link>
+                    </li>
+                    </ul>}
                     </li>
                     <li class="f-right">
                         <Link to="/" onClick={this.props.toLogin}>
